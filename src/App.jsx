@@ -3,23 +3,27 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const Card = ({title}) => {
+const Card = ({ title }) => {
   return (
-    <div>
+    <div className="card"
+    >
       <h2>{title}</h2>
+      <button onClick={()=> setHasLiked(true)}>
+        Like
+      </button>
     </div>
   );
 };
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [hasLiked, setHasLiked] = useState(false);
 
   return (
-    <div>
+    <div className="card-container">
       <h2>Functional Arrow Component</h2>
-      <Card title="One"/>
+      <Card title="One" />
       <Card title="Two" />
-      <Card title="Three"/>
+      <Card title="Three" />
     </div>
   );
 }
